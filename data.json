@@ -1,0 +1,86 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 32,
+    "fields": {
+      "name": "Классическая зарубежная проза",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 33,
+    "fields": {
+      "name": "Исторический детектив",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 34,
+    "fields": {
+      "name": "Классическая отечественная проза",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 35,
+    "fields": {
+      "name": "Личная эффективность, мотивация",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 37,
+    "fields": {
+      "name": "Повелитель мух",
+      "description": "Если лицо совершенно меняется от того, сверху или снизу его осветить, — чего же стоит лицо? И чего же всё вообще тогда стоит?",
+      "image": "",
+      "category": 32,
+      "purchase_price": 276,
+      "date_creation": "2023-07-21T22:04:52.962Z",
+      "date_last_modification": "2023-07-21T22:04:52.962Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 38,
+    "fields": {
+      "name": "Десять негритят",
+      "description": "У сумасшедшего уйма преимуществ перед нормальными людьми. Они вдвое хитрее.",
+      "image": "",
+      "category": 33,
+      "purchase_price": 299,
+      "date_creation": "2023-07-21T22:04:52.962Z",
+      "date_last_modification": "2023-07-21T22:04:52.962Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 39,
+    "fields": {
+      "name": "Идиот",
+      "description": "Я пришел вас предупредить: во-первых, мне денег взаймы не давать, потому что я непременно буду просить.",
+      "image": "",
+      "category": 34,
+      "purchase_price": 329,
+      "date_creation": "2023-07-21T22:04:52.962Z",
+      "date_last_modification": "2023-07-21T22:04:52.962Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 40,
+    "fields": {
+      "name": "48 законов",
+      "description": "Мудрец получит больше пользы от своих врагов, чем глупец от своих друзей.",
+      "image": "",
+      "category": 35,
+      "purchase_price": 479,
+      "date_creation": "2023-07-21T22:04:52.962Z",
+      "date_last_modification": "2023-07-21T22:04:52.962Z"
+    }
+  }
+]

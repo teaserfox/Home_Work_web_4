@@ -1,0 +1,23 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+{% load mediapath_filter %}
+
+<div class="col-12 mb-5">
+    <a class="btn btn-outline-primary" href="{% url 'blog:create' %}">Добавить блог</a>
+</div>
+<div class="row text-center">
+    {% for object in object_list%}
+    <div class="col-md-4">
+        <h2>{{object.title}}</h2>
+        <img src="{{ object.image|mediapath_filter }}" width="250" height="350" alt="постер">
+        <p>{{object.description}}</p>
+        <div class="btn-group mb-5">
+            <a href="{% url 'blog:view' object.pk %}" class="btn btn-outline-secondary active"
+               aria-current="page">Просмотр</a>
+            <a href="{% url 'blog:edit' object.pk %}" class="btn btn-success">Редактировать</a>
+            <a href="{% url 'blog:delete' object.pk %}" class="btn btn-danger">Удалить</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

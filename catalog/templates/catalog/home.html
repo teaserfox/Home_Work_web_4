@@ -1,0 +1,42 @@
+{% extends 'catalog/base.html'%}
+{% load mediapath_tag %}
+{% load mediapath_filter %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="pricing-header px-3 py-3 pt-md-20 pb-md-4 mx-auto text-center">
+    <h1 class="display-4"><img src="https://phonoteka.org/uploads/posts/2023-03/1679759142_phonoteka-org-p-morda-lisi-art-vkontakte-81.jpg" width="90" height="80" alt="лисица">Фоксбук</h1>
+    <p class="lead">Фоксбук - это отличный магазин рекомендованных книг к прочтению</p>
+</div>
+
+<div class="container-sm">
+    <div class="row text-center">
+        {% for object in object_list %}
+        <div class="col-3">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <img src="{% mediapath_tag object.image %}" width="250" height="350" alt="постер"/> <!-- Tag -->
+{#                  <img src="{{ object.image|mediapath_filter }}" /> <!-- filter -->#}
+                </div>
+                 <div class="card mb-4 box-shadow">
+                 <div class="card-body">
+                    <h2 class="my-0 font-weight-normal">{{ object.name }}</h2>
+                 </div>
+                    <ul class="card text-center">
+                        <li>Категория: {{ object.category }}</li>
+                        <p></p>
+                        <li>Описание: {{ object.description|slice:':150' }}</li>
+                        <p></p>
+                        <h5 class="card-title pricing-card-title">{{ object.purchase_price }} рублей</h5>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}
