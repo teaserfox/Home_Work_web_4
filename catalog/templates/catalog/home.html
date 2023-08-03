@@ -1,4 +1,4 @@
-{% extends 'catalog/base.html'%}
+{% extends 'catalog/base.html' %}
 {% load mediapath_tag %}
 {% load mediapath_filter %}
 {% load static %}
@@ -24,7 +24,7 @@
                  <div class="card-body">
                     <h2 class="my-0 font-weight-normal">{{ object.name }}</h2>
                  </div>
-                    <ul class="card text-center">
+                    <ul class="card text-center ">
                         <li>Категория: {{ object.category }}</li>
                         <p></p>
                         <li>Описание: {{ object.description|slice:':150' }}</li>

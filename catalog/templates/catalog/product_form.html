@@ -1,0 +1,48 @@
+{% extends 'catalog/base.html' %}
+
+{% block content %}
+    <div class="col-12">
+        <form class="row" method="post" enctype="multipart/form-data">
+            <div class="col-3">
+                <div class="card text-center">
+                    <div class="card-header">
+                         <figure>
+                            <img src="https://yobte.ru/uploads/posts/2019-11/lis-furri-51-foto-17.jpg" width="350" height="250" alt="лисица c книгой">
+                            <figcaption><h4>Добавьте книгу</h4></figcaption>
+                         </figure>
+                    </div>
+                    <div class="card-body">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="buttonbtn btn-outline-success">Сохранить</button>
+                    </div>
+                    <div class="card-footer"></div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">
+                            Добавить версию
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-body">
+                            {{ formset.management_form }}
+                            {% for form in formset.forms %}
+                                {{ form.as_p }}
+                            {% endfor %}
+                        </div>
+                        <div class="card-footer"></div>
+                    </div>
+                </div>
+        </form>
+    </div>
+{% endblock %}
+
+
+
+                    <figure>
+                    <img src="https://yobte.ru/uploads/posts/2019-11/lis-furri-51-foto-17.jpg" width="350" height="250" alt="лисица c книгой">
+                    <figcaption><h4>Добавьте книгу</h4></figcaption>
+                    </figure>
