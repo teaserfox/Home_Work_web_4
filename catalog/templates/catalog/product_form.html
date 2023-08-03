@@ -20,22 +20,27 @@
                 </div>
             </div>
             <div class="col-3">
-                <div class="card">
+                <div class="card text-center">
                     <div class="card-header">
-                        <h4 class="card-title">
-                            Добавить версию
-                        </h4>
+                         <figure>
+                            <img src="https://drasler.ru/wp-content/uploads/2019/07/Открытки-с-днем-рождения-лис019.jpg" width="350" height="250" alt="лисица c книгой">
+                            <figcaption><h4>Добавьте версию</h4></figcaption>
+                         </figure>
                     </div>
                     <div class="card-body">
-                        <div class="card-body">
-                            {{ formset.management_form }}
+                        {{ formset.management_form }}
                             {% for form in formset.forms %}
                                 {{ form.as_p }}
+                                {% if not forloop.last %}
+                                    <hr>
+                                {% endif %}
                             {% endfor %}
-                        </div>
-                        <div class="card-footer"></div>
+                        <button type="submit" class="buttonbtn btn-outline-success">Сохранить</button>
                     </div>
+                    <div class="card-footer"></div>
                 </div>
+            </div>
+                <div class="card-footer"></div>
         </form>
     </div>
 {% endblock %}
