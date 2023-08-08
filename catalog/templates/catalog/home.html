@@ -20,20 +20,24 @@
                     <img src="{% mediapath_tag object.image %}" width="250" height="350" alt="постер"/> <!-- Tag -->
 {#                  <img src="{{ object.image|mediapath_filter }}" /> <!-- filter -->#}
                 </div>
-                 <div class="card mb-4 box-shadow">
+
                  <div class="card-body">
                     <h2 class="my-0 font-weight-normal">{{ object.name }}</h2>
                  </div>
                     <ul class="container text-center ">
                         <p>Категория: {{ object.category }}</p>
                         <p></p>
-                        <p>Описание: {{ object.description|slice:':150' }}</p>
+                        <p>Описание: {{ object.description|truncatechars:120 }}</p>
                         <p></p>
                         <h5 class="card-title pricing-card-title">{{ object.purchase_price }} рублей</h5>
                     </ul>
-                 </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
+
+                <div class="card-footer" >
+                    <div class="d-grid gap-2 col-12 mx-auto">
+                        <a href="{% url 'catalog:update_home' object.pk %}" type="button" class="btn btn-lg btn-block btn-outline-primary">Редактировать</a>
+                        <a href="{% url 'catalog:delete_home' object.pk %}" type="button" class="btn btn-lg btn-block btn-outline-primary">Удалить</a>
+                        <a href="{% url 'catalog:version' object.pk %}" type="button" class="btn btn-lg btn-block btn-outline-primary">К версиям продукта</a>
+                    </div>
                 </div>
 
             </div>

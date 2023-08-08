@@ -57,7 +57,7 @@ class HomeUpdateView(UpdateView):
         if self.request.method == 'POST':
             context_data['formset'] = VersionFormset(self.request.POST, instance=self.object)
         else:
-            context_data = VersionFormset(instance=self.object)
+            context_data['formset'] = VersionFormset(instance=self.object)
         return context_data
 
     def form_valid(self, form):
