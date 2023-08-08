@@ -2,29 +2,21 @@ from django import forms
 from catalog.models.products import Product
 from catalog.models.version import Version
 
+banned_words = ('казино', 'криптовалюта', 'крипта', 'биржа', 'дешево', 'бесплатно', 'обман', 'полиция', 'радар')
+
 
 class ProductForm(forms.ModelForm):
 
     class Meta:
         model = Product
-        fields = '__all__'
+        fields =('name', 'description', 'image', 'category', 'purchase_price')
 
     def clean_name(self):
-        name = self.cleaned_data['name']
-        banned_words = ['казино', 'криптовалюта', 'крипта', 'биржа', 'дешево', 'бесплатно', 'обман', 'полиция',
-                        'радар']
-        if name in banned_words:
-            raise forms.ValidationError('Недопустимые темы в литературе')
-        return name
-
-    def clean_description(self):
-        description = self.cleaned_data['description']
-        banned_words = ['казино', 'криптовалюта', 'крипта', 'биржа', 'дешево', 'бесплатно', 'обман', 'полиция',
-                        'радар']
+        cleaned_data = self.cleaned_data['name']
         for word in banned_words:
-            if word in description:
-                raise forms.ValidationError("Недопустимые темы описания")
-            return description
+            if word in cleaned_data.lower():
+                raise forms.ValidationError('Недопустимые темы в литературе')
+        return cleaned_data
 
     def __int__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

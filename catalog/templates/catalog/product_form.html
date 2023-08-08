@@ -29,18 +29,46 @@
                     </div>
                     <div class="card-body">
                         {{ formset.management_form }}
-                            {% for form in formset.forms %}
-                                {{ form.as_p }}
-                                {% if not forloop.last %}
-                                    <hr>
-                                {% endif %}
-                            {% endfor %}
+                        {% for form in formset.forms %}
+                            {{ form.as_p }}
+                            {% if not forloop.last %}
+                                <hr>
+                            {% endif %}
+                        {% endfor %}
                         <button type="submit" class="buttonbtn btn-outline-success">Сохранить</button>
                     </div>
                     <div class="card-footer"></div>
                 </div>
             </div>
-                <div class="card-footer"></div>
         </form>
     </div>
 {% endblock %}
+{#    <div class="container">#}
+{#    <div class="row text-center">#}
+{#    {% if object_list %}#}
+{#        {% for object in object_list %}#}
+{#        <div class="col-3">#}
+{#            <div class="card mb-4 box-shadow">#}
+{#                <div class="card-header">#}
+{#                    <h4 class="my-0 font-weight-normal">{{ object.title }}</h4>#}
+{#                </div>#}
+{#                <div class="card-body">#}
+{#                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">#}
+{#                        <li>Описание: {{ object.description }}</li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        {% endfor %}#}
+{#    {% else %}#}
+{#        <div class="card mb-4 box-shadow">#}
+{#                <div class="card-header">#}
+{#                    <h4 class="my-0 font-weight-normal">У товара отсутствуют активные версии</h4>#}
+{#                </div>#}
+{#         {% endif %}#}
+{#        <a href="#" type="button" class="btn btn-lg btn-block btn-outline-primary">Редактировать товар</a>#}
+{#        </div>#}
+
+
+
+

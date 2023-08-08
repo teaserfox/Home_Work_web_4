@@ -192,6 +192,17 @@ files = [
 traitlets = "*"
 
 [[package]]
+name = "package"
+version = "0.1.1"
+description = "package is a package to package your package"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "package-0.1.1.tar.gz", hash = "sha256:01eee19a56a936bd63222f0a3c531fcdba37b5ad1bd833b960d62fb960b4955e"},
+]
+
+[[package]]
 name = "parso"
 version = "0.8.3"
 description = "A Python Parser"
@@ -551,4 +562,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "5728f5a1b46f47d500cc3f7319dad8d90219da6799520c3c92863965458e5437"
+content-hash = "801018d1115550d8dd21f2a09bd69a3b7ce8963c1ff80d33392e7c8989b4c9e8"
