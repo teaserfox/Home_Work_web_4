@@ -49,3 +49,4 @@ def activate_new_user(request, pk):
     user_for_activate.is_active = True  # смена флага у пользователя на True
     user_for_activate.save()  # сохранение
     return render(request, 'users/activate_user.html')
+
