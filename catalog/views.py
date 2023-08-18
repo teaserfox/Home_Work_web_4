@@ -6,6 +6,7 @@ from catalog.models.products import Product
 from django.urls import reverse_lazy, reverse
 
 from catalog.models.version import Version
+from catalog.services import get_cashed_categories_list
 
 
 # Create your views here.
@@ -20,6 +21,12 @@ def contacts(request):
         print(f'Имя: {name} \nТелефон {phone} \nСообщение {message}')
 
     return render(request, 'catalog/contacts.html')
+
+
+def categories_list(request):
+    categories = get_cashed_categories_list()
+    context = {'object_list': categories, }
+    return render(request, 'catalog/categories.html', context)
 
 
 class HomeListView(ListView):

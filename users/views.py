@@ -8,6 +8,7 @@ from django.views.generic import CreateView, UpdateView
 from config import settings
 from users.forms import UserRegisterForm, UserProfileForm
 from users.models import User
+from django.contrib import messages
 
 
 class RegisterView(CreateView):
@@ -47,6 +48,7 @@ def activate_new_user(request, pk):
     user = get_user_model()  # получение модели пользователя
     user_for_activate = user.objects.get(id=pk)  # получение пользователя с нужным id
     user_for_activate.is_active = True  # смена флага у пользователя на True
-    user_for_activate.save()  # сохранение
+    user_for_activate.save(update_fields=['is_active'])  # сохранение
+    messages.add_message(request, messages.INFO, f'Учетная запись {user.email} активирована')
     return render(request, 'users/activate_user.html')
 

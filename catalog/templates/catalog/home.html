@@ -32,7 +32,7 @@
                             <p></p>
                             <p>Описание: {{ object.description|truncatechars:120 }}</p>
                             <p></p>
-                            <h5 class="card-title pricing-card-title">{{ object.purchase_price }} рублей</h5>
+                            <h5 class="card-title pricing-card-title"> {{ object.purchase_price }} рублей</h5>
                         </ul>
                         {% if user.is_authenticated %}
                             <div class="card-footer">
